@@ -5,4 +5,4 @@ set -e
 docker pull horlacloud/simple-python-app:latest
 
 # Run the Docker image as a container
-docker run -d -p 5000:5000 horlacloud/simple-python-app:tlatest
+docker run -d -p 5000:5000 horlacloud/simple-python-app:latest

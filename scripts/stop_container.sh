@@ -1,9 +1,12 @@
 #!/bin/bash
 set -e
 
-containerid=$(docker ps -q)
+container_id=$(docker ps -q --filter "publish=5000")
 
-if [ -n "$containerid" ]; then
-    docker stop $containerid
-    docker rm $containerid
+if [ ! -z "$container_id" ]; then
+    echo "Stopping container on port 5000: $container_id"
+    docker stop $container_id
+    docker rm -f $container_id
+else
+    echo "No container is currently running on port 5000."
 fi
